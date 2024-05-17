@@ -17,6 +17,7 @@ app.get("/apiqueries", (req, res) => {
     // get the URL parameters passed by
     // query with req.query
     const queries = req.query;
+console.log('Received params:', req.query);
     res.send(queries);
 });
 
