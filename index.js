@@ -7,18 +7,18 @@ const PORT = process.env.PORT || 3000;
 app.use(bodyParser.json());
 
 // normal json response
-//app.post('/webhook', (req, res) => {
- //   console.log('Received webhook:', req.body);
- //   res.sendStatus(200);
-//});
+app.post('/webhook', (req, res) => {
+console.log('Received webhook:', req.body);
+res.sendStatus(200);
+});
 
 // using queries
 app.get("/apiqueries", (req, res) => {
     // get the URL parameters passed by
     // query with req.query
-    const queries = req.query;
+const queries = req.query;
 console.log('Received params:', req.query);
-    res.send(queries);
+res.send(queries);
 });
 
 app.listen(PORT, () => {
